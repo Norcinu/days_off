@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+    {% for u in user %}
+        <h1>Authors Name &#45;&gt; {{u.author.nickname}} &#58 UserID &#45;&gt; {{u.id}}</h1>
+    {% endfor %}
+{% endblock %} 
+
