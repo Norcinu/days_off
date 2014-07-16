@@ -3,9 +3,12 @@
         <title>{{title}} - MyPage</title>
     </head>
 
-    <body>
-        <a href="http://www.arsenal.com">Arsenal</a>
+    <body> 
         <a href="login">Login</a>
+        <a href="update">Update Date</a>
+        <a href="remove">Remove Date</a>
+        <a href="reset">Reset Year</a>
+
         {% with messages  = get_flashed_messages() %}
         {% if messages %}
         <ul>

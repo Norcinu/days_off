@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-    {% for u in user %}
-        <h1>Authors Name &#45;&gt; {{u.author.nickname}} &#58 UserID &#45;&gt; {{u.id}}</h1>
-    {% endfor %}
+<p />
+{% for ent in user %}
+    {% if ent.total_days_off is defined %}
+        Days available in working year {{ent.total_days_off}}<br />
+        Days taken in the working year {{ent.days_taken}}<br /> 
+    {% else %}
+        Used date is {{ent.date}} <br />
+    {% endif %}
+{% endfor %}
 {% endblock %} 
 
