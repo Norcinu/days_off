@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
-<p />
-{% for ent in user %}
-    {% if ent.total_days_off is defined %}
-        Days available in working year {{ent.total_days_off}}<br />
-        Days taken in the working year {{ent.days_taken}}<br /> 
-    {% else %}
-        Used date is {{ent.date}} <br />
-    {% endif %}
-{% endfor %}
+
+{% if user.code is defined %}
+    {{user.get_body()}}
+{% else %}
+    Total Days Taken&#58;
+    <h1>{{user.days_taken}}</h1>
+
+    Yearly Allowance&#58;
+    <h1>{{user.total_days_off}}</h1>
+{% endif %}
 {% endblock %} 
 

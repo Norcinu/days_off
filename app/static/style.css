@@ -1,0 +1,38 @@
+/* CSS Document */
+
+body {
+	font:Georgia, "Times New Roman", Times, serif;
+	background-color:#778899;
+	/*background-color:#3399FF;*/
+}
+
+
+table {
+	margin:auto auto;
+}
+
+h1 {text-align:center}
+
+#container {
+       	font-family: Monaco, Consolas, "Lucida Console", monospace;
+	font-size:75%;
+        text-align:center;
+        position: relative;
+	margin: 20px auto;
+        width: 500px;
+	background-color: #CCCCCC;
+	top: 10px;
+}
+
+#heightHack {
+    font-family: Monaco, Consolas, "Lucida Console", monospace;
+    font-size:75%;
+    text-align:center;
+    position: relative;
+    margin: 20px auto;
+    width: 500px;
+    background-color: #CCCCCC;
+    top: 10px;
+
+    height:768px;
+}

@@ -2,22 +2,29 @@
     <head>
         <title>{{title}} - MyPage</title>
     </head>
-
-    <body> 
-        <a href="login">Login</a>
-        <a href="update">Update Date</a>
-        <a href="remove">Remove Date</a>
-        <a href="reset">Reset Year</a>
-
-        {% with messages  = get_flashed_messages() %}
-        {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {% endwith %}
-        {% block content %}{% endblock %}
+    <link rel=stylesheet type=text/css href="{{url_for('static', filename='style.css')}}">
+    <body>
+        <div id="container">
+            <h1>Steven&#39;s time off tracker</h1>
+            <a href="login">Login</a>
+            <a href="update">Update Date</a>
+            <a href="remove">Remove Date</a>
+            <a href="reset">Reset Year</a>
+        </div>
+        
+        <p />
+        
+        <div id="heightHack">
+            {% with messages  = get_flashed_messages() %}
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+            {% block content %}{% endblock %}
+        </div>
     </body>
 </html>
