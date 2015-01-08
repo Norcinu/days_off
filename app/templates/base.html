@@ -2,10 +2,19 @@
     <head>
         <title>{{title}} - MyPage</title>
     </head>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>    
+    <script>
+        var paragraphs = document.getElementsByTagName("p");
+for (var i = 0; i < paragraphs.length; i++) {
+  var paragraph = paragraphs.item(i);
+  paragraph.style.setProperty("color", "white", null);
+}
+    </script>
     <link rel=stylesheet type=text/css href="{{url_for('static', filename='style.css')}}">
     <body>
         <div id="container">
             <h1>Steven&#39;s time off tracker</h1>
+            <a href="gaming">Gaming</a>
             <a href="login">Login</a>
             <a href="update">Update Date</a>
             <a href="remove">Remove Date</a>

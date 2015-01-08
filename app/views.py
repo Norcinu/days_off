@@ -2,12 +2,20 @@ from flask import render_template, flash, redirect
 from app import app
 from forms import LoginForm
 from app import mongo
+from app import db
 import calendar
 from werkzeug.exceptions import HTTPException
+from models import User
+from app import db
+import requests
+
+import calendar
 
 @app.route('/')
 @app.route('/index')
 def index():
+    usss = User.query.all()
+    print usss
     try:
         cursor = mongo.db.days_off.find_one_or_404({'total_days_off':{'$gt':0}})
     except HTTPException as notfound:
@@ -26,4 +34,14 @@ def login():
 
 @app.route('/update', methods = ['GET', 'POST'])
 def update():
-    return render_template('update.html', title='Update Date')
+    calendar.setfirstweekday(calendar.SUNDAY)
+    c = calendar.HTMLCalendar(calendar.SUNDAY).formatyear(2014)
+    return c
+    #return render_template('update.html', title='Update Date')
+
+
+@app.route('/gaming')
+def gaming():
+    r = requests.get('http://eu.battle.net/api/d3/profile/norcinu-2227/')
+    print r.json
+    return render_template("gaming.html", title='Gaming', result=r.json)
